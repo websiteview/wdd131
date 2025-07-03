@@ -1,0 +1,75 @@
+/* CSS Grid on body */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main-layout"
+    "footer";
+  grid-template-rows: auto auto 1fr auto;
+  height: 100vh;
+}
+
+/* Header */
+header {
+  grid-area: header;
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  
+}
+
+/* Flexbox for nav */
+nav {
+  grid-area: nav;
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  padding: 1rem 0;
+  
+}
+
+nav p {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/*header, nav {
+    width: 100%;
+}*/
+
+/* Main layout area: contains main + aside in 3:1 ratio */
+.main-layout {
+  grid-area: main-layout;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+/* Main content */
+main {
+  background-color: #d3d3d3;
+  padding: 1rem;
+}
+
+/* Aside content */
+aside {
+  background-color: white;
+  padding: 1rem;
+}
+
+/* Footer */
+footer {
+  grid-area: footer;
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+}

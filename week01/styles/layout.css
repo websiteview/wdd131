@@ -1,16 +1,19 @@
-/* CSS Grid on body */
-body {
+/* Reset spacing globally */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Body layout using grid */
+body {
   font-family: Arial, sans-serif;
   display: grid;
   grid-template-areas:
     "header"
-    "nav"
     "main-layout"
     "footer";
-  grid-template-rows: auto auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
   height: 100vh;
 }
 
@@ -19,33 +22,34 @@ header {
   grid-area: header;
   background-color: #333;
   color: white;
-  padding: 1rem;
+  padding: 0;
+
   
 }
 
-/* Flexbox for nav */
+header h1 {
+   padding: 2rem;
+}
+
+/* Nav inside header using flex */
 nav {
-  grid-area: nav;
   display: flex;
   justify-content: space-around;
   background-color: black;
-  padding: 1rem 0;
+  padding: 2rem;
+  margin-top: 4rem;
+  font-size: 1.5rem;
   
 }
 
-nav p {
-  margin: 0;
-  padding: 0;
+nav a {
   color: white;
   font-weight: bold;
-  cursor: pointer;
+  text-decoration: none;
+  
 }
 
-/*header, nav {
-    width: 100%;
-}*/
-
-/* Main layout area: contains main + aside in 3:1 ratio */
+/* Main layout */
 .main-layout {
   grid-area: main-layout;
   display: grid;
@@ -56,12 +60,14 @@ nav p {
 main {
   background-color: #d3d3d3;
   padding: 1rem;
+  font-size: 1.5rem;
 }
 
 /* Aside content */
 aside {
   background-color: white;
   padding: 1rem;
+  font-size: 1.5rem;
 }
 
 /* Footer */
@@ -72,4 +78,6 @@ footer {
   padding: 1rem;
   text-align: center;
   font-weight: bold;
+  padding-bottom: 8rem;
+  font-size: 1.5rem;
 }

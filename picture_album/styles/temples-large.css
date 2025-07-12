@@ -1,0 +1,27 @@
+@media screen and (min-width: 768px) {
+  nav {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  #menu {
+    display: none;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  nav a {
+    margin-left: 2rem;
+  }
+
+  nav a:hover {
+    background-color: white;
+    color: #4B0082;
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+}

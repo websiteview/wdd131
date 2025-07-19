@@ -1,13 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const currentYear = new Date().getFullYear();
-  document.getElementById("year").textContent = currentYear;
+  // Footer year and last modified
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("lastModified").textContent = document.lastModified;
 
-  const lastMod = document.lastModified;
-  document.getElementById("lastModified").textContent = lastMod;
-
+  // Wind Chill
   const temp = parseFloat(document.getElementById("temp").textContent);
   const speed = parseFloat(document.getElementById("speed").textContent);
-  const chillSpan = document.getElementById("chill");
 
   function calculateWindChill(t, s) {
     return (
@@ -18,10 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ).toFixed(1);
   }
 
-  // Call only if temp <= 50 and wind speed > 3, else N/A
+  let windChill = "N/A";
   if (temp <= 50 && speed > 3) {
-    chillSpan.textContent = `${calculateWindChill(temp, speed)} °F`;
-  } else {
-    chillSpan.textContent = "N/A";
+    windChill = `${calculateWindChill(temp, speed)} °F`;
   }
+
+  document.getElementById("chill").textContent = windChill;
 });

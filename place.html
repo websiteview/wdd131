@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Country Page</title>
-  <link rel="stylesheet" href="styles/place.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guatemala country profile and current weather conditions.">
+  <title>Guatemala | Country Page</title>
+  <link rel="stylesheet" href="styles/place.css">
   <script src="scripts/place.js" defer></script>
 </head>
 <body>
@@ -14,7 +15,7 @@
 
   <picture class="hero">
     <source srcset="images/hero-large.webp" media="(min-width: 600px)">
-    <img src="images/hero-small.webp" alt="Beautiful view of Guatemala" />
+    <img src="images/hero-small.webp" alt="Beautiful view of Guatemala's landscape" loading="lazy">
   </picture>
 
   <main>
@@ -28,8 +29,8 @@
     </section>
 
     <section class="weather" aria-label="Weather conditions">
-      <h2>Weather <span class="weather-icon"></span></h2>
-      <img src="images/weather-icon.svg" alt="Weather icon" class="mobile-icon" aria-hidden="true">
+      <h2>Weather</h2>
+      <img src="images/weather-icon.svg" alt="Weather icon showing partly cloudy conditions" class="mobile-icon">
       <p><strong>Temperature:</strong> <span id="temp">65</span> °F</p>
       <p><strong>Wind Speed:</strong> <span id="speed">5</span> mph</p>
       <p><strong>Wind Chill:</strong> <span id="chill">Loading...</span></p>

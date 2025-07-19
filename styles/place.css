@@ -1,13 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
-  --guatemala-blue: #2a9fd6;       
-  --guatemala-navy: #174873;       
-  --guatemala-white: #f5f7fa;      
-  --guatemala-gray: #e1e8ed;       
+  --guatemala-blue: #2a9fd6;
+  --guatemala-navy: #174873;
+  --guatemala-white: #f5f7fa;
+  --guatemala-gray: #e1e8ed;
   --guatemala-shadow: rgba(23, 72, 115, 0.1);
-  --text-dark: #133b5c;            
+  --text-dark: #133b5c;
 }
-
 
 * {
   box-sizing: border-box;
@@ -16,7 +16,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: var(--text-dark);
   background: var(--guatemala-white);
   line-height: 1.6;
@@ -83,7 +83,6 @@ footer {
   font-size: 0.875rem;
 }
 
-
 @media (min-width: 768px) {
   main {
     flex-direction: row;
@@ -109,7 +108,6 @@ footer {
   }
 }
 
-
 @media (max-width: 767px) {
   .mobile-icon {
     display: block;
@@ -119,7 +117,6 @@ footer {
     display: none;
   }
 }
-
 
 section.data {
   border-left: 6px solid var(--guatemala-blue);

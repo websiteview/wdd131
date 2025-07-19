@@ -1,14 +1,14 @@
-/* ===== CSS VARIABLES ===== */
+
 :root {
-  --guatemala-blue: #2a9fd6;       /* Modern softer flag blue */
-  --guatemala-navy: #174873;       /* Deep contrast navy */
-  --guatemala-white: #f5f7fa;      /* Elegant soft white */
-  --guatemala-gray: #e1e8ed;       /* Gentle neutral for cards */
+  --guatemala-blue: #2a9fd6;       
+  --guatemala-navy: #174873;       
+  --guatemala-white: #f5f7fa;      
+  --guatemala-gray: #e1e8ed;       
   --guatemala-shadow: rgba(23, 72, 115, 0.1);
-  --text-dark: #133b5c;            /* Modern dark text */
+  --text-dark: #133b5c;            
 }
 
-/* ===== General Resets ===== */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -83,7 +83,7 @@ footer {
   font-size: 0.875rem;
 }
 
-/* Responsive Desktop */
+
 @media (min-width: 768px) {
   main {
     flex-direction: row;
@@ -109,7 +109,7 @@ footer {
   }
 }
 
-/* Responsive Mobile */
+
 @media (max-width: 767px) {
   .mobile-icon {
     display: block;
@@ -120,7 +120,7 @@ footer {
   }
 }
 
-/* Section Decorations */
+
 section.data {
   border-left: 6px solid var(--guatemala-blue);
 }

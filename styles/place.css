@@ -29,6 +29,7 @@ header {
 .hero img {
   width: 100%;
   height: auto;
+  display: block;
 }
 
 main {
@@ -63,6 +64,7 @@ footer {
     display: none;
   }
 
+  /* Show emoticon using ::after only on wider view */
   .weather-icon::after {
     content: " ⛅";
     display: inline;
@@ -71,4 +73,13 @@ footer {
   .weather-icon {
     display: inline;
   }
+}
+
+/* Color Contrast Enhancement */
+header, section, footer {
+  color: var(--primary-color);
+}
+
+p strong {
+  color: var(--primary-color);
 }

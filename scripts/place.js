@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ).toFixed(1);
   }
 
+  // Call only if temp <= 50 and wind speed > 3, else N/A
   if (temp <= 50 && speed > 3) {
     chillSpan.textContent = `${calculateWindChill(temp, speed)} °F`;
   } else {

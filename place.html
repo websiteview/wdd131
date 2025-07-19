@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Guatemala country profile and current weather conditions.">
+  <meta name="description" content="Country profile for Guatemala including key facts and current weather.">
+  <meta name="author" content="Frinx Mendoza">
   <title>Guatemala | Country Page</title>
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS & JS -->
   <link rel="stylesheet" href="styles/place.css">
   <script src="scripts/place.js" defer></script>
 </head>
@@ -29,8 +35,8 @@
     </section>
 
     <section class="weather" aria-label="Weather conditions">
-      <h2>Weather</h2>
-      <img src="images/weather-icon.svg" alt="Weather icon showing partly cloudy conditions" class="mobile-icon">
+      <h2>Weather <span class="weather-icon"></span></h2>
+      <img src="images/weather-icon.svg" alt="Weather icon showing partly cloudy conditions" class="mobile-icon" aria-hidden="true">
       <p><strong>Temperature:</strong> <span id="temp">65</span> °F</p>
       <p><strong>Wind Speed:</strong> <span id="speed">5</span> mph</p>
       <p><strong>Wind Chill:</strong> <span id="chill">Loading...</span></p>

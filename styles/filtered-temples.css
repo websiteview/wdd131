@@ -16,11 +16,16 @@ header, footer {
 
 nav {
   margin-top: 0.5rem;
+
+  /* Use flexbox for nav */
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-/* Use <a> as nav links, style them without :hover */
+/* Style nav links */
 nav a {
-  margin: 0 0.5rem;
   padding: 0.5rem 1rem;
   display: inline-block;
   color: white;
@@ -28,9 +33,16 @@ nav a {
   border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
-/* Optional: active state (avoid :hover) */
+/* Add :hover pseudo-class */
+nav a:hover {
+  background-color: #005999;
+  cursor: pointer;
+}
+
+/* Active and focus states for accessibility */
 nav a:focus,
 nav a.active {
   outline: 2px solid #ffcc00;

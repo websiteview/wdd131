@@ -1,24 +1,40 @@
+/* Use the Google font */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f9f9f9;
+  color: #222;
 }
 
 header, footer {
-  background: #004165;
+  background-color: #004165;
   color: white;
-  padding: 1rem;
   text-align: center;
+  padding: 1rem;
 }
 
-nav button {
-  margin: 0.5rem;
+nav {
+  margin-top: 0.5rem;
+}
+
+/* Use <a> as nav links, style them without :hover */
+nav a {
+  margin: 0 0.5rem;
   padding: 0.5rem 1rem;
-  cursor: pointer;
-  border: none;
-  background-color: #0077cc;
+  display: inline-block;
   color: white;
+  background-color: #0077cc;
   border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Optional: active state (avoid :hover) */
+nav a:focus,
+nav a.active {
+  outline: 2px solid #ffcc00;
+  background-color: #005999;
 }
 
 .card-container {
@@ -29,10 +45,10 @@ nav button {
 }
 
 .card {
+  background-color: white;
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 1rem;
-  background-color: white;
 }
 
 .card img {

@@ -20,7 +20,7 @@ const temples = [
     area: 42300,
     imageUrl: "https://churchofjesuschrist.org/img/laie-temple.jpg"
   },
-  // Add 3 of your own:
+  // 3 user-added temples
   {
     name: "Quito Ecuador Temple",
     location: "Quito, Ecuador",
@@ -46,18 +46,19 @@ const temples = [
 
 function createCard(temple) {
   return `
-    <section class="card">
+    <section class="card" tabindex="0">
       <h2>${temple.name}</h2>
       <p><strong>Location:</strong> ${temple.location}</p>
-      <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
+      <p><strong>Dedicated:</strong> ${new Date(temple.dedicated).toLocaleDateString()}</p>
       <p><strong>Size:</strong> ${temple.area.toLocaleString()} sq ft</p>
-      <img src="${temple.imageUrl}" alt="Photo of ${temple.name}" loading="lazy">
+      <img src="${temple.imageUrl}" alt="Photo of ${temple.name}" loading="lazy" />
     </section>
   `;
 }
 
 function renderTemples(filteredTemples) {
   document.getElementById("temple-cards").innerHTML = filteredTemples.map(createCard).join("");
+  setActiveLink();
 }
 
 function filterTemples(criteria) {
@@ -69,13 +70,31 @@ function filterTemples(criteria) {
   renderTemples(result);
 }
 
-document.querySelectorAll("nav button").forEach(button => {
-  button.addEventListener("click", () => filterTemples(button.dataset.filter));
+function setActiveLink() {
+  const links = document.querySelectorAll("nav a");
+  links.forEach(link => link.classList.remove("active"));
+  // Find the link matching the last filter used (stored in data attribute or URL hash)
+  const activeFilter = document.querySelector("nav a.active") || document.querySelector("nav a[data-filter='all']");
+  if (!activeFilter) links[0].classList.add("active");
+}
+
+// Attach event listeners for navigation links
+document.querySelectorAll("nav a").forEach(link => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const filter = link.getAttribute("data-filter");
+    filterTemples(filter);
+    // Add active class to clicked link
+    document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
+    link.classList.add("active");
+  });
 });
 
-// Footer info
+// Footer year and last modified
 document.getElementById("year").textContent = new Date().getFullYear();
 document.getElementById("lastModified").textContent = document.lastModified;
+document.getElementById("name").textContent = "Your Full Name";
 
 // Initial render
 renderTemples(temples);
+document.querySelector("nav a[data-filter='all']").classList.add("active");

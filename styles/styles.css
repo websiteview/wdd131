@@ -14,8 +14,17 @@
   box-sizing: border-box;
 }
 
+/* Container para ancho máximo y centrado */
+.container {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--padding);
+  padding-right: var(--padding);
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   margin: 0;
   background-color: var(--bg);
   color: var(--text);
@@ -27,10 +36,8 @@ header, footer {
   color: white;
   text-align: center;
   padding: var(--padding);
+  font-family: 'Roboto', Arial, sans-serif;
 }
-
-
-
 
 main {
   padding: var(--padding);
@@ -46,6 +53,7 @@ form {
   width: 100%;
   display: grid;
   gap: var(--gap);
+  font-family: 'Open Sans', Arial, sans-serif;
 }
 
 label, legend {
@@ -61,6 +69,7 @@ input, select, textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: vertical;
+  font-family: 'Open Sans', Arial, sans-serif;
 }
 
 input[type="radio"],
@@ -91,6 +100,7 @@ input[type="submit"] {
   cursor: pointer;
   border-radius: var(--radius);
   transition: background-color 0.3s ease;
+  font-family: 'Open Sans', Arial, sans-serif;
 }
 
 input[type="submit"]:hover,

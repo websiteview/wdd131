@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Product Review Form for WDD131" />
-  <meta name="author" content="Frinx Hanford Mendoza Rivas" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Product Review Form for WDD131">
+  <meta name="author" content="Frinx Hanford Mendoza Rivas">
   <title>Product Review</title>
 
   <!-- Google Fonts: Open Sans and Roboto -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
   <header>
@@ -31,28 +31,28 @@
       <fieldset>
         <legend>Overall Rating<span aria-hidden="true">*</span></legend>
         <div class="rating-stars">
-          <label><span>★</span><input type="radio" name="rating" id="star1" value="1" required /></label>
-          <label><span>★★</span><input type="radio" name="rating" id="star2" value="2" /></label>
-          <label><span>★★★</span><input type="radio" name="rating" id="star3" value="3" /></label>
-          <label><span>★★★★</span><input type="radio" name="rating" id="star4" value="4" /></label>
-          <label><span>★★★★★</span><input type="radio" name="rating" id="star5" value="5" /></label>
+          <label><span>★</span><input type="radio" name="rating" id="star1" value="1" required></label>
+          <label><span>★★</span><input type="radio" name="rating" id="star2" value="2"></label>
+          <label><span>★★★</span><input type="radio" name="rating" id="star3" value="3"></label>
+          <label><span>★★★★</span><input type="radio" name="rating" id="star4" value="4"></label>
+          <label><span>★★★★★</span><input type="radio" name="rating" id="star5" value="5"></label>
         </div>
       </fieldset>
 
       <!-- Date of Installation -->
       <label for="install-date">Date of Installation<span aria-hidden="true">*</span></label>
-      <input type="date" id="install-date" name="install-date" required />
+      <input type="date" id="install-date" name="install-date" required>
 
       <!-- Useful Features -->
       <fieldset>
         <legend>
-          Which features did you find useful in the product?<br />
+          Which features did you find useful in the product?<br>
           <em>(Check all that apply)</em>
         </legend>
-        <label><input type="checkbox" id="durability" name="features" value="Durability" /> Durability</label>
-        <label><input type="checkbox" id="ease" name="features" value="Ease of Use" /> Ease of Use</label>
-        <label><input type="checkbox" id="performance" name="features" value="Performance" /> Performance</label>
-        <label><input type="checkbox" id="design" name="features" value="Design" /> Design</label>
+        <label><input type="checkbox" id="durability" name="features" value="Durability"> Durability</label>
+        <label><input type="checkbox" id="ease" name="features" value="Ease of Use"> Ease of Use</label>
+        <label><input type="checkbox" id="performance" name="features" value="Performance"> Performance</label>
+        <label><input type="checkbox" id="design" name="features" value="Design"> Design</label>
       </fieldset>
 
       <!-- Written Review (optional) -->
@@ -61,18 +61,20 @@
 
       <!-- Your Name (optional) -->
       <label for="username">Your Name <span class="optional">(Optional)</span></label>
-      <input type="text" id="username" name="username" placeholder="e.g. John Doe" />
+      <input type="text" id="username" name="username" placeholder="e.g. John Doe">
 
       <!-- Submit -->
-      <input type="submit" value="Post Review" />
+      <input type="submit" value="Post Review">
     </form>
   </main>
 
   <footer>
     <div class="container">
-       <p>©2025 Frinx Hanford Mendoza Rivas 🇬🇹<br>Guatemala<br>Last Modification: 2025-08-01</p>
+      <p>©2025 Frinx Hanford Mendoza Rivas 🇬🇹<br>Guatemala<br>Last Modification: 2025-08-01</p>
     </div>
   </footer>
-  <script type="module" src="scripts/reviews.js" defer></script>
+
+  <!-- JavaScript -->
+  <script type="module" src="scripts/reviews.js"></script>
 </body>
 </html>

@@ -1,0 +1,620 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: white;
+  color: var(--gray-dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Variables */
+:root {
+  --green: #2e7d32;
+  --light-pink: #ffeaea;
+  --gray-light: #f0f0f5;
+  --gray-medium: #aaaabb;
+  --gray-dark: #333344;
+  --transition-speed: 0.3s;
+}
+
+/* Utility */
+.hidden { display: none !important; }
+.desktop-only { display: none; }
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 280px;
+  background: var(--gray-light);
+  box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform var(--transition-speed) ease-in-out;
+  z-index: 1000;
+}
+.sidebar.show {
+  transform: translateX(0);
+}
+.sidebar button#close-sidebar {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--green);
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.sidebar .profile {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+.sidebar .profile h2 {
+  font-size: 1.2rem;
+  color: var(--gray-dark);
+}
+.sidebar .profile p {
+  font-size: 0.9rem;
+  color: var(--gray-medium);
+}
+.sidebar-nav {
+  list-style: none;
+}
+.sidebar-nav li {
+  margin: 12px 0;
+}
+.sidebar-nav a {
+  color: var(--gray-dark);
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background var(--transition-speed);
+}
+.sidebar-nav a img {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  opacity: 0.7;
+}
+.sidebar-nav a:hover, .sidebar-nav a.active {
+  background: var(--light-pink);
+  color: var(--green);
+}
+.sidebar .login-btn {
+  margin-top: 40px;
+  width: 100%;
+  background-color: var(--green);
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Header */
+header.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 60px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 900;
+}
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--green);
+}
+
+.logo a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+
+
+.main-nav {
+  display: flex;
+  gap: 20px;
+}
+.main-nav a {
+  color: var(--gray-dark);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.main-nav a.active, .main-nav a:hover {
+  color: var(--green);
+}
+#open-sidebar {
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: var(--green);
+  cursor: pointer;
+  display: block;
+}
+.login-btn {
+  background-color: var(--green);
+  border: none;
+  padding: 10px 22px;
+  color: white;
+  border-radius: 20px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+}
+
+/* Main hero section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 60px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hero-text {
+  flex: 1;
+}
+.hero-text h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2.8rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.hero-text p {
+  color: var(--gray-dark);
+  max-width: 500px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+.cta-button {
+  background-color: var(--green);
+  color: white;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+.cta-subtext {
+  font-size: 0.9rem;
+  color: var(--gray-dark);
+  margin-bottom: 20px;
+}
+
+/* Used by + social icons grouped */
+.social-proof {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  /*flex-wrap: wrap;*/
+  margin-top: 20px;
+}
+.user-count {
+  font-size: 0.95rem;
+  color: var(--gray-dark);
+}
+.social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.social-icons img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+/* Hero image */
+.hero-image {
+  flex: 1;
+}
+.hero-image img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+.gallery-item {
+  position: relative;
+  text-align: center;
+}
+.gallery-item img {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  object-fit:cover;
+}
+.gallery-label {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--green);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+
+/* Footer */
+footer {
+  padding: 30px 20px;
+  font-size: 0.9rem;
+  color: var(--gray-medium);
+  text-align: center;
+}
+
+/* Desktop layout */
+@media screen and (min-width: 768px) {
+  #open-sidebar {
+    display: none;
+  }
+  .desktop-only {
+    display: inline-block;
+  }
+
+  .hero {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero-text {
+    flex: 1;
+    max-width: 50%;
+  }
+
+  .hero-image {
+    flex: 1;
+    max-width: 50%;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 60px 60px;
+  }
+
+  .gallery-item img {
+    height: 180px;
+  }
+}
+/* --- TOURS SECTION --- */
+.tours {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.tour-card {
+  background: var(--gray-light);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--transition-speed);
+  cursor: pointer;
+}
+
+.tour-card:hover {
+  box-shadow: 0 6px 20px rgba(46, 125, 50, 0.25);
+}
+
+.tour-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  object-fit: cover;
+  height: 180px;
+}
+
+.tour-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: var(--green);
+  margin-bottom: 8px;
+  font-size: 1.4rem;
+}
+
+.tour-card p {
+  flex-grow: 1;
+  font-size: 1rem;
+  color: var(--gray-dark);
+  margin-bottom: 12px;
+}
+
+.tour-card .btn {
+  align-self: flex-start;
+  background-color: var(--green);
+  color: white;
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  cursor: pointer;
+}
+
+/* --- BENEFITS SECTION --- */
+.benefits {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.benefit-item {
+  background: var(--gray-light);
+  border-radius: 12px;
+  padding: 25px 20px;
+  box-shadow: 0 3px 10px rgba(46, 125, 50, 0.1);
+  text-align: center;
+  transition: transform var(--transition-speed);
+}
+
+.benefit-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 18px rgba(46, 125, 50, 0.2);
+}
+
+.benefit-item img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.benefit-item h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--green);
+}
+
+.benefit-item p {
+  font-size: 1rem;
+  color: var(--gray-dark);
+  line-height: 1.4;
+}
+
+/* --- FAQ SECTION --- */
+.faq {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.faq h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--green);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--gray-light);
+  padding-bottom: 15px;
+}
+
+.faq-item summary {
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--green);
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: var(--gray-dark);
+  line-height: 1.4;
+}
+
+/* --- PRICING SECTION --- */
+.pricing {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.pricing-card {
+  background: var(--gray-light);
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 15px rgba(46, 125, 50, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--transition-speed);
+}
+
+.pricing-card:hover {
+  box-shadow: 0 8px 25px rgba(46, 125, 50, 0.25);
+}
+
+.pricing-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: var(--green);
+}
+
+.pricing-card .price {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--green);
+  margin-bottom: 15px;
+}
+
+.pricing-card ul {
+  list-style: none;
+  margin-bottom: 25px;
+  padding-left: 0;
+  color: var(--gray-dark);
+  font-size: 1rem;
+  text-align: left;
+}
+
+.pricing-card ul li {
+  margin-bottom: 8px;
+}
+
+.pricing-card .btn {
+  margin-top: auto;
+  background-color: var(--green);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  cursor: pointer;
+}
+
+/* --- TESTIMONIALS SECTION --- */
+.testimonials {
+  max-width: 900px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: var(--green);
+  margin-bottom: 40px;
+}
+
+.testimonial-card {
+  background: var(--gray-light);
+  border-radius: 15px;
+  padding: 30px 25px;
+  box-shadow: 0 5px 15px rgba(46, 125, 50, 0.1);
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  font-style: italic;
+  color: var(--gray-dark);
+}
+
+.testimonial-card::before {
+  content: '“';
+  font-size: 4rem;
+  color: var(--green);
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  opacity: 0.15;
+}
+
+.testimonial-card p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.testimonial-author {
+  font-weight: 700;
+  color: var(--green);
+  font-style: normal;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* --- RESPONSIVE UPDATES --- */
+@media screen and (min-width: 768px) {
+  .tours {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .benefits {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .pricing {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .testimonial-card {
+    max-width: 700px;
+  }
+}

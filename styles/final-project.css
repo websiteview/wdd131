@@ -2,6 +2,7 @@ html, body {
   height: 100%;
   width: 100%;
 }
+
 /* Reset */
 * {
   margin: 0;
@@ -31,6 +32,25 @@ body {
 /* Utility */
 .hidden { display: none !important; }
 .desktop-only { display: none; }
+
+/* Overlay para sidebar móvil */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 900; /* menos que sidebar(1000) pero encima del page */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-speed) ease-in-out;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 /* Sidebar */
 .sidebar {
@@ -138,8 +158,6 @@ header.navbar {
   color: var(--green);
   text-decoration: none;
 }
-
-
 
 .main-nav {
   display: flex;
@@ -290,7 +308,6 @@ header.navbar {
   border: 0;
 }
 
-
 /* Footer */
 footer {
   padding: 30px 20px;
@@ -337,7 +354,24 @@ footer {
   .gallery-item img {
     height: 180px;
   }
+
+  .tours {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .benefits {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .pricing {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .testimonial-card {
+    max-width: 700px;
+  }
 }
+
 /* --- TOURS SECTION --- */
 .tours {
   max-width: 1200px;
@@ -398,223 +432,4 @@ footer {
   cursor: pointer;
 }
 
-/* --- BENEFITS SECTION --- */
-.benefits {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-}
-
-.benefit-item {
-  background: var(--gray-light);
-  border-radius: 12px;
-  padding: 25px 20px;
-  box-shadow: 0 3px 10px rgba(46, 125, 50, 0.1);
-  text-align: center;
-  transition: transform var(--transition-speed);
-}
-
-.benefit-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 18px rgba(46, 125, 50, 0.2);
-}
-
-.benefit-item img {
-  width: 60px;
-  margin-bottom: 15px;
-}
-
-.benefit-item h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: var(--green);
-}
-
-.benefit-item p {
-  font-size: 1rem;
-  color: var(--gray-dark);
-  line-height: 1.4;
-}
-
-/* --- FAQ SECTION --- */
-.faq {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-.faq h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 2rem;
-  color: var(--green);
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.faq-item {
-  margin-bottom: 20px;
-  border-bottom: 1px solid var(--gray-light);
-  padding-bottom: 15px;
-}
-
-.faq-item summary {
-  font-weight: 600;
-  font-size: 1.1rem;
-  cursor: pointer;
-  color: var(--green);
-  list-style: none;
-}
-
-.faq-item summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq-item p {
-  margin-top: 10px;
-  font-size: 1rem;
-  color: var(--gray-dark);
-  line-height: 1.4;
-}
-
-/* --- PRICING SECTION --- */
-.pricing {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.pricing-card {
-  background: var(--gray-light);
-  border-radius: 12px;
-  padding: 30px 20px;
-  box-shadow: 0 4px 15px rgba(46, 125, 50, 0.1);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  transition: box-shadow var(--transition-speed);
-}
-
-.pricing-card:hover {
-  box-shadow: 0 8px 25px rgba(46, 125, 50, 0.25);
-}
-
-.pricing-card h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 1.6rem;
-  margin-bottom: 10px;
-  color: var(--green);
-}
-
-.pricing-card .price {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--green);
-  margin-bottom: 15px;
-}
-
-.pricing-card ul {
-  list-style: none;
-  margin-bottom: 25px;
-  padding-left: 0;
-  color: var(--gray-dark);
-  font-size: 1rem;
-  text-align: left;
-}
-
-.pricing-card ul li {
-  margin-bottom: 8px;
-}
-
-.pricing-card .btn {
-  margin-top: auto;
-  background-color: var(--green);
-  color: white;
-  padding: 12px 28px;
-  border-radius: 30px;
-  font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
-  border: none;
-  cursor: pointer;
-}
-
-/* --- TESTIMONIALS SECTION --- */
-.testimonials {
-  max-width: 900px;
-  margin: 40px auto 60px;
-  padding: 0 20px;
-  text-align: center;
-}
-
-.testimonials h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 2.2rem;
-  color: var(--green);
-  margin-bottom: 40px;
-}
-
-.testimonial-card {
-  background: var(--gray-light);
-  border-radius: 15px;
-  padding: 30px 25px;
-  box-shadow: 0 5px 15px rgba(46, 125, 50, 0.1);
-  margin-bottom: 30px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  font-style: italic;
-  color: var(--gray-dark);
-}
-
-.testimonial-card::before {
-  content: '“';
-  font-size: 4rem;
-  color: var(--green);
-  position: absolute;
-  top: 15px;
-  left: 20px;
-  opacity: 0.15;
-}
-
-.testimonial-card p {
-  margin-bottom: 20px;
-  font-size: 1.1rem;
-  line-height: 1.5;
-}
-
-.testimonial-author {
-  font-weight: 700;
-  color: var(--green);
-  font-style: normal;
-  font-family: 'Montserrat', sans-serif;
-}
-
-/* --- RESPONSIVE UPDATES --- */
-@media screen and (min-width: 768px) {
-  .tours {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .benefits {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .pricing {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .testimonial-card {
-    max-width: 700px;
-  }
-}
+/*

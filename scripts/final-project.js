@@ -13,6 +13,5 @@ openBtn.addEventListener('click', () => {
 
 closeBtn.addEventListener('click', () => {
   sidebar.classList.remove('show');
-  sidebar.classList.add('hidden');
   openBtn.setAttribute('aria-expanded', 'false');
 });

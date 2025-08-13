@@ -8,6 +8,37 @@
   <link rel="stylesheet" href="styles/final-project.css" />
 </head>
 <body>
+    <!-- Mobile sidebar -->
+  <nav id="sidebar" class="sidebar">
+    <button id="close-sidebar" aria-label="Close menu">&times;</button>
+    <div class="profile">
+      <img src="images/profile.jpg" alt="Frinx Mendoza" class="profile-pic" />
+      <h2>Frinx Mendoza</h2>
+      <p>frinx.mendoza2@gmail.com</p>
+    </div>
+    <ul class="sidebar-nav">
+      <li>
+        <a href="tours.html"><img src="images/icon-tours.svg" alt="" aria-hidden="true" />Tours</a>
+      </li>
+      <li>
+        <a href="benefits.html" class="active"><img src="images/icon-benefits.svg" alt="" aria-hidden="true" />Benefits</a>
+      </li>
+      <li>
+        <a href="faq.html"><img src="images/icon-faq.svg" alt="" aria-hidden="true" />FAQ</a>
+      </li>
+      <li>
+        <a href="pricing.html"><img src="images/icon-pricing.svg" alt="" aria-hidden="true" />Pricing</a>
+      </li>
+      <li>
+        <a href="testimonials.html"><img src="images/icon-testimonials.svg" alt="" aria-hidden="true" />Testimonial</a>
+      </li>
+    </ul>
+    <button class="btn login-btn">Log In</button>
+  </nav>
+
+  <!-- Overlay para el sidebar móvil -->
+  <div id="overlay" class="overlay hidden"></div>
+  
   <div id="page-wrapper">
     <header class="navbar">
       <button id="open-sidebar" aria-label="Open menu">&#9776;</button>

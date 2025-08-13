@@ -41,12 +41,11 @@ body {
   height: 100vh;
   width: 100vw;
   background-color: rgba(0,0,0,0.4);
-  z-index: 900; /* menos que sidebar(1000) pero encima del page */
+  z-index: 900;
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--transition-speed) ease-in-out;
 }
-
 .overlay.show {
   opacity: 1;
   pointer-events: auto;
@@ -146,14 +145,21 @@ header.navbar {
   position: sticky;
   top: 0;
   z-index: 900;
+  position: relative;
 }
+
+.logo-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .logo {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 1.8rem;
   color: var(--green);
 }
-
 .logo a {
   color: var(--green);
   text-decoration: none;
@@ -172,6 +178,7 @@ header.navbar {
 .main-nav a.active, .main-nav a:hover {
   color: var(--green);
 }
+
 #open-sidebar {
   font-size: 1.8rem;
   background: none;
@@ -179,7 +186,10 @@ header.navbar {
   color: var(--green);
   cursor: pointer;
   display: block;
+  z-index: 2;
+  margin-right: 12px;
 }
+
 .login-btn {
   background-color: var(--green);
   border: none;
@@ -189,6 +199,18 @@ header.navbar {
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
   cursor: pointer;
+}
+
+/* Centered content sections */
+.tours,
+.faq,
+.benefits,
+.pricing,
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 /* Main hero section */
@@ -234,18 +256,16 @@ header.navbar {
   margin-bottom: 20px;
 }
 
-/* Used by + social icons grouped */
+/* Social proof */
 .social-proof {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-  /*flex-wrap: wrap;*/
   margin-top: 20px;
 }
 .user-count {
   font-size: 0.95rem;
-  color: var(--gray-dark);
 }
 .social-icons {
   display: flex;
@@ -297,6 +317,7 @@ header.navbar {
   font-family: 'Montserrat', sans-serif;
 }
 
+/* Visually hidden */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -316,13 +337,36 @@ footer {
   text-align: center;
 }
 
-/* Desktop layout */
+/* Desktop and Mobile adjustments */
 @media screen and (min-width: 768px) {
   #open-sidebar {
     display: none;
   }
   .desktop-only {
     display: inline-block;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+    transform: translateY(-50%);
+  }
+
+  header.navbar {
+    justify-content: flex-start;
+  }
+
+  .logo-container {
+    position: static;
+    transform: none;
+  }
+
+  .logo {
+    margin-right: auto;
+    font-size: 1.8rem;
   }
 
   .hero {
@@ -343,7 +387,6 @@ footer {
   .hero-image img {
     width: 100%;
     height: 380px;
-    object-fit: cover;
   }
 
   .gallery {
@@ -358,125 +401,19 @@ footer {
   .tours {
     grid-template-columns: repeat(3, 1fr);
   }
-  
   .benefits {
     grid-template-columns: repeat(3, 1fr);
   }
-  
   .pricing {
     grid-template-columns: repeat(3, 1fr);
   }
-  
   .testimonial-card {
     max-width: 700px;
   }
-}
-
-/* --- TOURS SECTION --- */
-.tours {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-}
-
-.tour-card {
-  background: var(--gray-light);
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.1);
-  display: flex;
-  flex-direction: column;
-  transition: box-shadow var(--transition-speed);
-  cursor: pointer;
-}
-
-.tour-card:hover {
-  box-shadow: 0 6px 20px rgba(46, 125, 50, 0.25);
-}
-
-.tour-card img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 16px;
-  object-fit: cover;
-  height: 180px;
-}
-
-.tour-card h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  color: var(--green);
-  margin-bottom: 8px;
-  font-size: 1.4rem;
-}
-
-.tour-card p {
-  flex-grow: 1;
-  font-size: 1rem;
-  color: var(--gray-dark);
-  margin-bottom: 12px;
-}
-
-.tour-card .btn {
-  align-self: flex-start;
-  background-color: var(--green);
-  color: white;
-  padding: 10px 22px;
-  border-radius: 25px;
-  font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
-  border: none;
-  cursor: pointer;
 }
 
 @media screen and (max-width: 767px) {
   .main-nav {
     display: none !important;
   }
-}
-
-
-@media screen and (max-width: 767px) {
-  header.navbar {
-    justify-content: flex-start;
-    gap: 16px; /* <<< Añade espacio entre ícono y logo */
-    padding: 14px 20px; /* Más cómodo para mobile */
-  }
-
-  #open-sidebar {
-    margin-right: 8px; /* <<< Espacio entre ícono y logo */
-  }
-
-  .logo {
-    font-size: 1.4rem; /* Ajuste opcional para tamaño */
-  }
-}
-
-/* Centrar el logo y mantener ícono en su lugar */
-header.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 20px;
-  position: relative;
-}
-
-/* Contenedor que permite centrar visualmente el logo */
-.logo-container {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* Más grande en mobile */
-.logo {
-  font-size: 2rem; /* Puedes aumentar más si deseas */
-}
-
-/* Asegura que botón sandwich no se mueva */
-#open-sidebar {
-  z-index: 2;
 }

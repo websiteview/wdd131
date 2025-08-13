@@ -455,3 +455,28 @@ footer {
   }
 }
 
+/* Centrar el logo y mantener ícono en su lugar */
+header.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  position: relative;
+}
+
+/* Contenedor que permite centrar visualmente el logo */
+.logo-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Más grande en mobile */
+.logo {
+  font-size: 2rem; /* Puedes aumentar más si deseas */
+}
+
+/* Asegura que botón sandwich no se mueva */
+#open-sidebar {
+  z-index: 2;
+}

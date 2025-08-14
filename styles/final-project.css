@@ -465,11 +465,19 @@ header.navbar {
 }
 
 /* Contenedor que permite centrar visualmente el logo */
-.logo-container {
+/*.logo-container {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+}*/
+@media screen and (max-width: 760px) {
+  .logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
+
 
 /* Más grande en mobile */
 .logo {
@@ -484,7 +492,7 @@ header.navbar {
 
 
 /* Centrado de secciones comunes */
-.tours,
+/*.tours,
 .faq,
 .benefits,
 .pricing,
@@ -493,4 +501,131 @@ header.navbar {
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+*/
+
+/* Centrar el <main class="container"> sin afectar otras secciones */
+/* Centrar la sección principal en la página */
+main.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.intro-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 700px;
+  margin-bottom: 40px;
+}
+
+/* Botón centrado */
+.cta-button {
+  margin-top: 20px;
+  align-self: center;
+}
+
+/* --- PRICING SECTION STYLES (similar a .gallery) --- */
+.pricing-section {
+  width: 100%;
+  padding: 0 20px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.pricing-card {
+  background: var(--gray-light);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.1);
+  transition: box-shadow var(--transition-speed);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pricing-card:hover {
+  box-shadow: 0 6px 20px rgba(46, 125, 50, 0.25);
+}
+
+.pricing-card img {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.pricing-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+
+.pricing-card p {
+  color: var(--gray-dark);
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.pricing-card .price {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--green);
+  margin-top: auto;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Responsive layout like gallery */
+@media screen and (min-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 60px;
+  }
+
+  .pricing-section {
+    padding: 0 60px 60px;
+  }
+}
+
+/* Ajustes para íconos SVG en la galería de beneficios */
+.gallery-item img[src$=".svg"] {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+  padding: 10px;
+  background-color: var(--gray-light); /* Opcional: da fondo visible */
+  border-radius: 12px; /* Opcional: redondeado uniforme */
+}
+
+/* Ajuste visual para imágenes de testimonios ("travelers") */
+.gallery-item img[src*="rsz_"] {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img[src*="rsz_"]:hover {
+  transform: scale(1.05);
 }

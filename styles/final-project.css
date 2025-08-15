@@ -629,3 +629,151 @@ main.container {
 .gallery-item img[src*="rsz_"]:hover {
   transform: scale(1.05);
 }
+
+/* login.css - estilos del formulario de acceso */
+
+.form-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 350px;
+  margin: auto;
+  margin-top: 10vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.form-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form-box button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.form-box button:hover {
+  background-color: #45a049;
+}
+
+.form-box .toggle {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.form-box .toggle a {
+  color: #007BFF;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.form-box .message,
+.form-box .error {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.form-box .message { color: green; }
+.form-box .error { color: red; }
+
+/* login.css actualizado para hacerlo responsive y más moderno */
+
+.form-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 350px;
+  margin: auto;
+  margin-top: 10vh;
+  font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+.form-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.form-box button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.form-box button:hover {
+  background-color: #45a049;
+}
+
+.form-box .toggle {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.form-box .toggle a {
+  color: #007BFF;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.form-box .message,
+.form-box .error {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.form-box .message { color: green; }
+.form-box .error { color: red; }
+
+@media (max-width: 480px) {
+  .form-box {
+    padding: 20px;
+    margin: 30px 20px;
+  }
+
+  .form-box input,
+  .form-box button {
+    font-size: 16px;
+  }
+}
